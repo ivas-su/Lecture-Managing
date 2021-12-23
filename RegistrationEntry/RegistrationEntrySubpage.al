@@ -71,7 +71,7 @@ page 50006 "Registration Entry Subpage" {
                     ContactRec : Record Contact;
                     ActiveRec : Record Contact;
                     NoMarkedRecords : TextConst ENU = 'No marked records', RUS = 'Нет выделеных участников';
-                    ErrorContactMsg : TextConst ENU = 'These participants not added', RUS = 'Произошла ошибка с контактами';
+                    ErrorContactMsg : TextConst ENU = 'These participants not added', RUS = 'Есть не добаленые участники';
                 begin
                     ContactListPage.SETTABLEVIEW(ContactRec);
                     ContactListPage.LOOKUPMODE(TRUE);
