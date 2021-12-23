@@ -1,8 +1,9 @@
 page 50008 "Event Doc. Page" {
-    
-    Caption = 'Event Doc. Page';
+
     PageType = Document;
     SourceTable = "Event";
+    CaptionML = ENU = 'Event Document Page',
+                RUS = 'Страница-документ мероприятия';
 
     layout {
         area(content) {
@@ -117,16 +118,15 @@ page 50008 "Event Doc. Page" {
                 var
                     EventRec : Record "Event";
                     RegistartionEntry : Record "Registration Entry";
-                    // ParticipantReport : Report Participamt;
+                    ParticipantReport : Report Participant;
                 begin
-                    // FIXME
-                    // EventRec.Reset();
-                    // RegistartionEntry.Reset();
-                    // CurrPage.SetSelectionFilter(EventRec);
-                    // FilterParticipants(RegistartionEntry);
-                    // ParticipantReport.SetTableView(EventRec);
-                    // ParticipantReport.SetTableView(RegistartionEntry)
-                    // ParticipantReport.RunModal();
+                    EventRec.Reset();
+                    RegistartionEntry.Reset();
+                    CurrPage.SetSelectionFilter(EventRec);
+                    FilterParticipants(RegistartionEntry);
+                    ParticipantReport.SetTableView(EventRec);
+                    ParticipantReport.SetTableView(RegistartionEntry);
+                    ParticipantReport.RunModal();
                 end;
             }
             action("Send invitation") {
@@ -135,16 +135,18 @@ page 50008 "Event Doc. Page" {
                 Image = SendMail;
                 Promoted = true;
                 PromotedCategory = Process;
-                PromotedIsBig = true;
                 PromotedOnly = true;
 
                 trigger OnAction()
                 var
                     RegistrationEntry : Record "Registration Entry";
-                    Mail : Codeunit "SMTP Reg. Entry Mailing";
+                    Mail : Codeunit "Reg. Entry Mailing";
+                    ContactsError : TextConst ENU = 'There are no participants', RUS = 'Учатсники отсуцтвуют';
                 begin
                     FilterParticipants(RegistrationEntry);
-                    RegistrationEntry.FindFirst();
+                    if not RegistrationEntry.FindFirst() then begin
+                        Error(ContactsError);
+                    end;
                     Mail.SendRequests(RegistrationEntry);
                 end;
 
@@ -154,8 +156,8 @@ page 50008 "Event Doc. Page" {
 
     local procedure FilterParticipants(VAR RegEntry : Record "Registration Entry")
     begin
-        RegEntry.SetFilter("Direction Code", '=%1', rec."Direction Code");
-        RegEntry.SetFilter("Event Date", '=%1', rec."Event Date");
+        RegEntry.SetRange("Direction Code", rec."Direction Code");
+        RegEntry.SetRange("Event Date", rec."Event Date");
     end;
 
 }

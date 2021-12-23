@@ -8,9 +8,6 @@ page 50003 "Lecture Card" {
     layout {
         area(content) {
             group(General) {
-                field("Additional Doc. index"; Rec."Additional Doc. index") {
-                    ApplicationArea = All;
-                }
                 field("Code"; Rec."Code")
                 {
                     ToolTip = 'Specifies the value of the Code field.';
@@ -44,6 +41,16 @@ page 50003 "Lecture Card" {
                     ToolTip = 'Specifies the value of the Prelector Name field.';
                     ApplicationArea = All;
                 }
+            }
+        }
+        area(FactBoxes) {
+            part("Attachmed Documents"; "Document Attachment Factbox") {
+                ApplicationArea = All;
+                CaptionML = ENU = 'Attachemts',
+                            RUS = 'Вложения';
+                SubPageLink = "Table ID" = const(50002),
+                              "No." = field("Code"),
+                              "Line No." = field("Additional Doc. index");
             }
         }
     }

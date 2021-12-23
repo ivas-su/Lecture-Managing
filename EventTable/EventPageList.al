@@ -6,9 +6,7 @@ page 50007 "Event List" {
     PageType = List;
     SourceTable = "Event";
     UsageCategory = Lists;
-    InsertAllowed = false;
-    ModifyAllowed = false;
-    DeleteAllowed = false;
+    Editable = false;
     CardPageId = "Event Doc. Page";
     
     layout {
@@ -82,4 +80,25 @@ page 50007 "Event List" {
             }
         }
     }
+
+    actions {
+        area(Processing) {
+            action("Export all events") {
+                ApplicationArea = All;
+                Image = XMLFile;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                var
+                    CrmXml: XmlPort CRMExport;
+                begin
+                    CrmXml.Run();
+                end;
+
+            }
+        }
+    }
+
 }

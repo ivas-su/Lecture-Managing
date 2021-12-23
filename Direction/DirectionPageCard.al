@@ -25,7 +25,6 @@ page 50001 "Direction Card" {
                 field("Responsible Person Name"; Rec."Responsible Person Name") {
                     ToolTip = 'Specifies the value of the Responsible Person Name field.';
                     ApplicationArea = All;
-                    // TODO: check
                     Lookup = false;
                     DrillDown = false;
                     AssistEdit = false;

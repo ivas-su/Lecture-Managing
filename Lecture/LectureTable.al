@@ -74,7 +74,7 @@ table 50002 Lecture {
     }
 
     keys {
-        key(PK; "Direction Code","Code") {
+        key(PK; "Direction Code","Code", "Additional Doc. index") {
             Clustered = true;
         }
     }

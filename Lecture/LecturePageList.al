@@ -50,8 +50,8 @@ page 50002 "Lecture List" {
                 CaptionML = ENU = 'Attachments',
                             RUS = 'Вложения';
                 SubPageLink = "Table ID" = const(50002),
-                              "No." = field("Code");
-                // FIXME: add field "Additional code" to Document attachment
+                              "No." = field("Code"),
+                              "Line No." = field("Additional Doc. index");
             }
         }
     }

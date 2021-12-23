@@ -49,5 +49,10 @@ page 50010 "Contact Person Card"
             }
         }
     }
+
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+    begin
+        rec.Type := rec.Type::Person;
+    end;
     
 }

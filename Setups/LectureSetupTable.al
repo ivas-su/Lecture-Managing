@@ -1,4 +1,3 @@
-// TODO: Set series in GUI
 table 50003 "Lecture Setup" {
     DataClassification = ToBeClassified;
     

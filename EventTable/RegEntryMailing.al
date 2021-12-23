@@ -1,20 +1,4 @@
-// FIXME
-codeunit 50000 "SMTP Reg. Entry Mailing" {
-
-    /*
-        Name	DataType	Subtype	Length
-        NoEmailParticipants	Text		
-        MsgHeader	Text		
-        MsgFooter	Text		
-        MailBuffer	Record	Name/Value Buffer
-
-
-        Name	ConstValue
-        EmptyMailFieldError	There are participants without E-mail. Continue?\
-        FooterTemplate	You are invited to event:\\Direction name: "%1"\Date: %2\\Lecture name 1: "%3"\Prelector name 1: %4\\Lecture name 2: "%5"\Prelector name 2: %6\
-        HeaderTemplate	Dear, %1 %2\\
-
-    */
+codeunit 50000 "Reg. Entry Mailing" {
 
     var
         HeaderTemplate : TextConst ENU = 'Dear, %1 %2\\';
@@ -22,7 +6,8 @@ codeunit 50000 "SMTP Reg. Entry Mailing" {
         EmptyMailFieldError : TextConst ENU = 'There are participants without E-mail. Continue?\';
         MsgHeader : Text;
         MsgFooter : Text;
-        Mailbuffer : List of [Text];
+        Messages : List of [Text];
+        Emails : List of [Text];
         NoEmailParticipants : List of [Text];
 
     procedure SendRequests(VAR RegistrationEntry : Record "Registration Entry")
@@ -32,16 +17,21 @@ codeunit 50000 "SMTP Reg. Entry Mailing" {
         setMsgTemplate(RegistrationEntry);
 
         REPEAT
-        RegistrationEntry.CALCFIELDS("Participant E-mail");
-        IF checkEmailFieldNotEmpty(RegistrationEntry) THEN BEGIN
-            Contact.GET(RegistrationEntry."Participant Contact No.");
-            Mailbuffer.Add(StrSubstNo(MsgHeader + MsgFooter, Contact."First Name", Contact.Surname));
-        END;
+            RegistrationEntry.CALCFIELDS("Participant E-mail");
+            IF checkEmailFieldNotEmpty(RegistrationEntry) THEN BEGIN
+                Contact.GET(RegistrationEntry."Participant Contact No.");
+                Messages.Add(StrSubstNo(MsgHeader + MsgFooter, Contact."First Name", Contact.Surname));
+                Emails.Add(Contact."E-Mail");
+            END;
         UNTIL RegistrationEntry.NEXT = 0;
 
-        // IF NoEmailParticipants.Count() <> 0 THEN
-        //     IF CONFIRM(EmptyMailFieldError + NoEmailParticipants) THEN
-        //         sendTemplateRequest;
+        IF NoEmailParticipants.Count() <> 0 THEN begin
+            IF CONFIRM(EmptyMailFieldError + stringConcatention(NoEmailParticipants)) THEN
+                sendTemplateRequest();
+        end else begin
+            sendTemplateRequest();
+        end;
+
     end;    
 
     local procedure checkEmailFieldNotEmpty(RegEntry : Record "Registration Entry") : Boolean
@@ -61,25 +51,14 @@ codeunit 50000 "SMTP Reg. Entry Mailing" {
 
     local procedure sendTemplateRequest()
     var
-        MailManagement : Codeunit "Mail Management";
-        Mail : Record "Email Item";
+        EMessage : Codeunit "Email Message";
+        EmailMgt : Codeunit Email;
         idx : Integer;
     begin
-        Mail.SetBodyText('Hello');
-        for idx := 1 to Mailbuffer.Count() do begin
-            Message(Mailbuffer.Get(idx));
+        for idx := 1 to Messages.Count() do begin
+            EMessage.Create(Emails.Get(idx), 'Event invitation', Messages.Get(idx));
+            EmailMgt.Send(EMessage);
         end;
-
-        // SMTPMail.CreateMessage(
-        //  '',
-        //  MailManagement.GetSenderEmailAddress,
-        //  RegistrationEntry."Participant E-mail",
-        //  'Yess',
-        //  'Msg',
-        //  TRUE
-        // );
-        // 
-        // SMTPMail.Send;
     end;
 
     local procedure setMsgTemplate(VAR RegistrationEntry : Record "Registration Entry")
@@ -91,14 +70,25 @@ codeunit 50000 "SMTP Reg. Entry Mailing" {
 
         MsgHeader := HeaderTemplate;
         MsgFooter := STRSUBSTNO(
-        FooterTemplate,
-        EventRec."Direction Name",
-        EventRec."Event Date",
-        EventRec."Lecture Name 1",
-        EventRec."Prelector Name 1",
-        EventRec."Lecture Name 2",
-        EventRec."Prelector Name 2"
+            FooterTemplate,
+            EventRec."Direction Name",
+            EventRec."Event Date",
+            EventRec."Lecture Name 1",
+            EventRec."Prelector Name 1",
+            EventRec."Lecture Name 2",
+            EventRec."Prelector Name 2"
         );
+    end;
+
+    local procedure stringConcatention(strings : list of [Text]) : Text
+    var
+        result : Text;
+        idx : Integer;
+    begin
+        for idx := 1 to strings.Count() do begin
+            result += strings.Get(idx);
+        end;
+        exit(result);
     end;
 
 }

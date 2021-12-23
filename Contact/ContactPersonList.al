@@ -1,13 +1,12 @@
 page 50009 "Contact Person List"
 {
     
-    Caption = 'Contact Person List';
+    CaptionML = ENU = 'Contact Person List',
+                RUS = 'Список контактов';
     PageType = List;
     SourceTable = Contact;
     SourceTableView = where (Type = const(Person));
-    InsertAllowed = false;
-    ModifyAllowed = false;
-    DeleteAllowed = false;
+    Editable = false;
     CardPageId = "Contact Person Card";
     UsageCategory = Lists;
     ApplicationArea = All;
@@ -60,5 +59,10 @@ page 50009 "Contact Person List"
             }
         }
     }
+
+    procedure SetSelection(VAR Contact : Record Contact)
+    begin
+        CurrPage.SETSELECTIONFILTER(Contact);
+    end;
     
 }
