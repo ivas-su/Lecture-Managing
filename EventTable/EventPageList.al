@@ -89,6 +89,8 @@ page 50007 "Event List" {
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedOnly = true;
+                CaptionML = ENU = 'Export all events',
+                            RUS = 'Экспорт всех мероприятий';
 
                 trigger OnAction()
                 var

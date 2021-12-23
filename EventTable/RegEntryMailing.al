@@ -1,9 +1,9 @@
 codeunit 50000 "Reg. Entry Mailing" {
 
     var
-        HeaderTemplate : TextConst ENU = 'Dear, %1 %2\\';
-        FooterTemplate : TextConst ENU = 'You are invited to event:\\Direction name: "%1"\Date: %2\\Lecture name 1: "%3"\Prelector name 1: %4\\Lecture name 2: "%5"\Prelector name 2: %6\',
-            RUS = 'Приглашаем вас на мероприятие:\\Название направления: "%1"\Дата: %2\\Название лекции 1: "%3"\Имя Prelector 1: %4\\ Название лекции 2: "%5"\Имя Prelector 2: %6\';
+        HeaderTemplate : TextConst ENU = 'Dear, %1 %2<br><br>';
+        FooterTemplate : TextConst ENU = 'You are invited to event:<br><br>Direction name: "%1"<br>Date: %2<br><br>Lecture name 1: "%3"<br>Prelector name 1: %4<br><br>Lecture name 2: "%5"<br>Prelector name 2: %6<br>',
+            RUS = 'Приглашаем вас на мероприятие:<br><br>Название направления: "%1"<br>Дата: %2<br><br>Название лекции 1: "%3"<br>Имя Prelector 1: %4<br><br> Название лекции 2: "%5"<br>Имя Prelector 2: %6<br>';
         EmptyMailFieldError : TextConst ENU = 'There are participants without E-mail. Continue?\',
                                         RUS = 'Есть участники без электронной почты. Продолжить?\';
         MsgHeader : Text;
@@ -59,7 +59,7 @@ codeunit 50000 "Reg. Entry Mailing" {
         Subj : TextConst ENU = 'Event invitation', RUS = 'Приглашение на мероприятие';
     begin
         for idx := 1 to Messages.Count() do begin
-            EMessage.Create(Emails.Get(idx), Subj, Messages.Get(idx));
+            EMessage.Create(Emails.Get(idx), Subj, Messages.Get(idx), true);
             EmailMgt.Send(EMessage);
         end;
     end;

@@ -113,6 +113,8 @@ page 50008 "Event Doc. Page" {
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedOnly = true;
+                CaptionML = ENU = 'Print',
+                            RUS = 'Печать';
 
                 trigger OnAction()
                 var
@@ -136,6 +138,8 @@ page 50008 "Event Doc. Page" {
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedOnly = true;
+                CaptionML = ENU = 'Send invitation',
+                            RUS = 'Выслать приглашения';
 
                 trigger OnAction()
                 var
