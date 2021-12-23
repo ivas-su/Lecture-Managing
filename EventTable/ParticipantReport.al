@@ -23,7 +23,6 @@ report 50000 Participant
                 column(Registered;Registered) { IncludeCaption = true; }
                 column(RegisteredCounter;RegisteredCounter) {}
                 column(RegisteredButNotPresentCounter;RegisteredButNotPresentCounter) {}
-                column(PrelectorComment;PrelectorComment) {}
                 column(ReportTitle;ReportTitle) {}
                 column(Visitors;Visitors) {}
                 column(RegisteredButNotPresent;RegisteredButNotPresent) {}
@@ -46,10 +45,11 @@ report 50000 Participant
         }
     }
 
+   
     var
         RegisteredCounter: Integer;
+        PrelectorComment: label 'Prelector Comment';
         RegisteredButNotPresentCounter: Integer;
-        PrelectorComment: label 'Prelector comment';
         ReportTitle: TextConst ENU = 'Report header', RUS = 'Заголовк отчета';
         Visitors: TextConst ENU = 'Visitors', RUS = 'Посетители';
         RegisteredButNotPresent: TextConst ENU = 'Registered, but not visited', RUS = 'Зарегестрированые, но не посетившие';

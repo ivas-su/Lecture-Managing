@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ru-RU" original="Lecture-Managing">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 2533605254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direction Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Direction Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2533605254 - Field 2887779771 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direction Nos.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Direction Setup - Field Direction Nos. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2533605254 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Direction Setup - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 235073672 - Field 22963971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Additional Doc. index</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lecture - Field Additional Doc. index - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 235073672 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lecture - Field No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1685414005 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lecture Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lecture Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1685414005 - Field 3011610772 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lecture Nos.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lecture Setup - Field Lecture Nos. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1685414005 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lecture Setup - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3175432507 - Control 3168444338 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Address field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person Card - Control Address - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3175432507 - Control 1551200516 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Company No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person Card - Control Company No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3175432507 - Control 1541011875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Email field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person Card - Control E-Mail - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3175432507 - Control 602795601 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Job Title field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person Card - Control Job Title - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3175432507 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person Card - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3175432507 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person Card - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3175432507 - Control 3986423421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Phone No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person Card - Control Phone No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2262381449 - Control 3168444338 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Address field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person List - Control Address - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2262381449 - Control 1551200516 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Company No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person List - Control Company No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2262381449 - Control 1541011875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Email field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person List - Control E-Mail - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2262381449 - Control 602795601 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Job Title field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person List - Control Job Title - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2262381449 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2262381449 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person List - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2262381449 - Control 3986423421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Phone No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contact Person List - Control Phone No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1411659315 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction Card - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1411659315 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction Card - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1411659315 - Control 2590208792 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Responsible Person Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction Card - Control Responsible Person Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1411659315 - Control 350154690 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Responsible Person Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction Card - Control Responsible Person Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 228417601 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction List - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 228417601 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 228417601 - Control 2590208792 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Responsible Person Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction List - Control Responsible Person Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 228417601 - Control 350154690 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Responsible Person Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction List - Control Responsible Person Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2386583067 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direction Setup Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction Setup Page - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2386583067 - Control 2887779771 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Nos. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction Setup Page - Control Direction Nos. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2386583067 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Direction Setup Page - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 3013813668 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Direction Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 168939870 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Direction Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 3545664188 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Event Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Event Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 2972726964 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lecture Code 1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Lecture Code 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 3610423581 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lecture Code 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Lecture Code 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 1963074062 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lecture Name 1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Lecture Name 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 49984211 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lecture Name 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Lecture Name 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 4136805190 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Number of people present field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Number of people present - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 3037614662 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Number of registered field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Number of registered - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 872638612 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Code 1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Prelector Code 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 1510335229 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Code 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Prelector Code 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 2251707246 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Name 1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Prelector Name 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Control 338617395 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Name 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Control Prelector Name 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Action 1002420131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Action Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 889791035 - Action 2838391663 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send invitation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Doc. Page - Action Send invitation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 3013813668 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Direction Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 168939870 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Direction Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 3545664188 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Event Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Event Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 2972726964 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lecture Code 1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Lecture Code 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 3610423581 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lecture Code 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Lecture Code 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 1963074062 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lecture Name 1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Lecture Name 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 49984211 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lecture Name 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Lecture Name 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 4136805190 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Number of people present field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Number of people present - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 3037614662 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Number of registered field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Number of registered - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 872638612 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Code 1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Prelector Code 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 1510335229 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Code 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Prelector Code 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 2251707246 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Name 1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Prelector Name 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Control 338617395 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Name 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Control Prelector Name 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1194593858 - Action 2262164182 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export all events</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event List - Action Export all events - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3388555036 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture Card - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3388555036 - Control 3013813668 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture Card - Control Direction Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3388555036 - Control 168939870 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture Card - Control Direction Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3388555036 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture Card - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3388555036 - Control 524893243 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture Card - Control Prelector Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3388555036 - Control 791089685 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture Card - Control Prelector Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2826138874 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture List - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2826138874 - Control 3013813668 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture List - Control Direction Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2826138874 - Control 168939870 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture List - Control Direction Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2826138874 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2826138874 - Control 524893243 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture List - Control Prelector Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2826138874 - Control 791089685 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Prelector Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lecture List - Control Prelector Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2498884620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LectureSetupPage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page LectureSetupPage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2498884620 - Control 3011610772 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lecture Nos. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page LectureSetupPage - Control Lecture Nos. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2498884620 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page LectureSetupPage - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1055743150 - Control 3013813668 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Registration Entry Subpage - Control Direction Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1055743150 - Control 168939870 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Direction Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Registration Entry Subpage - Control Direction Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1055743150 - Control 3545664188 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Event Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Registration Entry Subpage - Control Event Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1055743150 - Control 2868535108 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Participant Contact No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Registration Entry Subpage - Control Participant Contact No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1055743150 - Control 1359845466 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Participant E-mail field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Registration Entry Subpage - Control Participant E-mail - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1055743150 - Control 2349749900 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Participant Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Registration Entry Subpage - Control Participant Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1055743150 - Control 3508618808 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Participant Phone No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Registration Entry Subpage - Control Participant Phone No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1055743150 - Control 2951140309 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Present field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Registration Entry Subpage - Control Present - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1055743150 - Control 856236780 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Registered field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Registration Entry Subpage - Control Registered - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4059628121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Participant</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Participant - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4059628121 - NamedType 3254252473" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prelector Comment</source>
+          <target>Комментарий лектора</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Participant - NamedType PrelectorComment</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 730723580 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRMExport</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort CRMExport - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
