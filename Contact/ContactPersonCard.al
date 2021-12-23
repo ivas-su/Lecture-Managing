@@ -1,9 +1,10 @@
 page 50010 "Contact Person Card"
 {
     
-    Caption = 'Contact Person Card';
     PageType = Card;
     SourceTable = Contact;
+    CaptionML = ENU = 'Contact Person Card',
+                RUS = 'Карточная сраница участника';
     
     layout
     {

@@ -49,9 +49,8 @@ report 50000 Participant
     var
         RegisteredCounter: Integer;
         RegisteredButNotPresentCounter: Integer;
-        PrelectorComment: TextConst ENU = 'Prelector comment', RUS = 'Коментарий лектора';
+        PrelectorComment: label 'Prelector comment';
         ReportTitle: TextConst ENU = 'Report header', RUS = 'Заголовк отчета';
         Visitors: TextConst ENU = 'Visitors', RUS = 'Посетители';
         RegisteredButNotPresent: TextConst ENU = 'Registered, but not visited', RUS = 'Зарегестрированые, но не посетившие';
-    
 }

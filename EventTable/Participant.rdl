@@ -463,7 +463,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!PrelectorComment.Value</Value>
+                                  <Value>Prelector Comment</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -635,17 +635,17 @@
                     </GroupExpressions>
                     <Filters>
                       <Filter>
-                        <FilterExpression>=Fields!EventDate_Event.Value</FilterExpression>
+                        <FilterExpression>=Fields!EventDate.Value</FilterExpression>
                         <Operator>Equal</Operator>
                         <FilterValues>
-                          <FilterValue>=Fields!EventDate_RegistrationEntry.Value</FilterValue>
+                          <FilterValue>=Fields!Event_Date.Value</FilterValue>
                         </FilterValues>
                       </Filter>
                       <Filter>
-                        <FilterExpression>=Fields!DirectionCode_Event.Value</FilterExpression>
+                        <FilterExpression>=Fields!DirectionCode.Value</FilterExpression>
                         <Operator>Equal</Operator>
                         <FilterValues>
-                          <FilterValue>=Fields!DirectionCode_RegistrationEntry.Value</FilterValue>
+                          <FilterValue>=Fields!Direction_Code.Value</FilterValue>
                         </FilterValues>
                       </Filter>
                     </Filters>
