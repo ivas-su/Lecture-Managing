@@ -14,7 +14,6 @@
   "screenshots": [],
   "platform": "1.0.0.0",
   "application": "19.0.0.0",
-  "features": ["TranslationFile","GenerateCaptions"],
   "idRanges": [
     {
       "from": 50000,
