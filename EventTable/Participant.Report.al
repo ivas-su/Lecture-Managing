@@ -23,9 +23,9 @@ report 50000 Participant
                 column(Registered;Registered) { IncludeCaption = true; }
                 column(RegisteredCounter;RegisteredCounter) {}
                 column(RegisteredButNotPresentCounter;RegisteredButNotPresentCounter) {}
-                column(ReportTitle;ReportTitle) {}
-                column(Visitors;Visitors) {}
-                column(RegisteredButNotPresent;RegisteredButNotPresent) {}
+                column(ReportTitle;ReportTitleLbl) {}
+                column(Visitors;VisitorsLbl) {}
+                column(RegisteredButNotPresent;RegisteredButNotPresentLbl) {}
 
                 trigger OnPreDataItem()
                 begin
@@ -36,9 +36,8 @@ report 50000 Participant
                 trigger OnAfterGetRecord()
                 begin
                     RegisteredCounter += 1;
-                    if not "Registration Entry".Present and "Registration Entry".Registered then begin
+                    if not "Registration Entry".Present and "Registration Entry".Registered then
                         RegisteredButNotPresentCounter += 1;
-                    end;
                 end;
 
             }
@@ -48,9 +47,9 @@ report 50000 Participant
    
     var
         RegisteredCounter: Integer;
-        PrelectorComment: label 'Prelector Comment';
+        // PrelectorCommentLbl: label 'Prelector Comment';
         RegisteredButNotPresentCounter: Integer;
-        ReportTitle: TextConst ENU = 'Report header', RUS = 'Заголовк отчета';
-        Visitors: TextConst ENU = 'Visitors', RUS = 'Посетители';
-        RegisteredButNotPresent: TextConst ENU = 'Registered, but not visited', RUS = 'Зарегестрированые, но не посетившие';
+        ReportTitleLbl: TextConst ENU = 'Report header', RUS = 'Заголовк отчета';
+        VisitorsLbl: TextConst ENU = 'Visitors', RUS = 'Посетители';
+        RegisteredButNotPresentLbl: TextConst ENU = 'Registered, but not visited', RUS = 'Зарегестрированые, но не посетившие';
 }

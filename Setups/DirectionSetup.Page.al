@@ -1,4 +1,4 @@
-page 50004 "Direction Setup Page"
+page 50004 "Direction Setup"
 {
     
     Caption = 'Direction Setup Page';

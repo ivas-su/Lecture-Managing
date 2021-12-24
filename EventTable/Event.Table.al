@@ -153,11 +153,10 @@ table 50005 "Event" {
 
     local procedure checkValidLectureCodes(lection1: Code[20]; lection2: Code[20])
     var
-        InsertError : TextConst ENU = 'Cannot insert two simular lections', RUS = 'Нельхя добалять две одинаковые лекции';
+        InsertErr : TextConst ENU = 'Cannot insert two simular lections', RUS = 'Нельхя добалять две одинаковые лекции';
     begin
-        if lection1 = lection2 then begin
-            Error(InsertError);
-        end;
+        if lection1 = lection2 then
+            Error(InsertErr);
     end;
 
 }

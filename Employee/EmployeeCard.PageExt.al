@@ -1,4 +1,4 @@
-pageextension 50000 "Employee Page Ext" extends "Employee Card" {
+pageextension 50000 "Employee Card" extends "Employee Card" {
 
     layout {
         addlast(General) {

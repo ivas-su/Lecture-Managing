@@ -1,30 +1,28 @@
 codeunit 50001 "Doc. Att. Ext" {
 
-    local procedure DeleteAttachedDocuments(Rec: Record Lecture)
+    local procedure DeleteAttachedDocuments(Lecture: Record Lecture)
     var
         DocumentAttachment: Record "Document Attachment";
     begin
-        if Rec.IsTemporary() then
+        if Lecture.IsTemporary() then
             exit;
         if DocumentAttachment.IsEmpty() then
             exit;
 
-        SetDocumentAttachmentFiltersForRecRef(DocumentAttachment, Rec);
-        if Rec.IsEmpty() then
+        SetDocumentAttachmentFiltersForRecRef(DocumentAttachment, Lecture);
+        if Lecture.IsEmpty() then
             DocumentAttachment.DeleteAll();
     end;
 
-    local procedure SetDocumentAttachmentFiltersForRecRef(var DocumentAttachment: Record "Document Attachment"; Rec: Record Lecture)
+    local procedure SetDocumentAttachmentFiltersForRecRef(var DocumentAttachment: Record "Document Attachment"; Lecture: Record Lecture)
     begin
         DocumentAttachment.SetRange("Table ID", Database::Lecture);
-        DocumentAttachment.SetRange("No.", Rec."Code");
-        DocumentAttachment.SetRange("Line No.", Rec."Additional Doc. index");
+        DocumentAttachment.SetRange("No.", Lecture."Code");
+        DocumentAttachment.SetRange("Line No.", Lecture."Additional Doc. index");
     end;
 
     [EventSubscriber(ObjectType::Table, Database::Lecture, 'OnAfterDeleteEvent', '', false, false)]
     local procedure DeleteAttachedDocumentsOnAfterDeleteEmployee(var Rec: Record Lecture; RunTrigger: Boolean)
-    var
-        RecRef: RecordRef;
     begin
         DeleteAttachedDocuments(Rec);
     end;
@@ -40,9 +38,8 @@ codeunit 50001 "Doc. Att. Ext" {
                     RecRef.Open(Database::Lecture);
                     Lecture.SetRange("Code", DocumentAttachment."No.");
                     Lecture.SetRange("Additional Doc. index", DocumentAttachment."Line No.");
-                    if Lecture.FindFirst() then begin
+                    if Lecture.FindFirst() then
                         RecRef.GetTable(Lecture);
-                    end;
                 end;
         end;
     end;
@@ -50,7 +47,6 @@ codeunit 50001 "Doc. Att. Ext" {
     [EventSubscriber(ObjectType::Page, Page::"Document Attachment Details", 'OnAfterOpenForRecRef', '', false, false)]
     local procedure DocAttOnAfterOpenForRecRef(var DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef; var FlowFieldsEditable: Boolean)
     var
-        Lecture: Record Lecture;
         FieldRef: FieldRef;
         RecNo: Code[20];
         LineNo: Integer;

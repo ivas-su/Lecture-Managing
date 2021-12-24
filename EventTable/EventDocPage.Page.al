@@ -145,12 +145,11 @@ page 50008 "Event Doc. Page" {
                 var
                     RegistrationEntry : Record "Registration Entry";
                     Mail : Codeunit "Reg. Entry Mailing";
-                    ContactsError : TextConst ENU = 'There are no participants', RUS = 'Учатсники отсуцтвуют';
+                    ContactsErr : TextConst ENU = 'There are no participants', RUS = 'Учатсники отсуцтвуют';
                 begin
                     FilterParticipants(RegistrationEntry);
-                    if not RegistrationEntry.FindFirst() then begin
-                        Error(ContactsError);
-                    end;
+                    if not RegistrationEntry.FindFirst() then
+                        Error(ContactsErr);
                     Mail.SendRequests(RegistrationEntry);
                 end;
 

@@ -67,30 +67,27 @@ page 50006 "Registration Entry Subpage" {
 
                 trigger OnAction()
                 var 
-                    ContactListPage : Page "Contact Person List";
-                    ContactRec : Record Contact;
+                    Contact : Record Contact;
                     ActiveRec : Record Contact;
-                    NoMarkedRecords : TextConst ENU = 'No marked records', RUS = 'Нет выделеных участников';
-                    ErrorContactMsg : TextConst ENU = 'These participants not added', RUS = 'Есть не добаленые участники';
+                    ContactListPage : Page "Contact Person List";
+                    NoMarkedRecordsMsg : TextConst ENU = 'No marked records', RUS = 'Нет выделеных участников';
+                    ErrorContactMsg : TextConst ENU = 'These participants not added\%1', RUS = 'Есть не добаленые участники\%1';
                 begin
-                    ContactListPage.SETTABLEVIEW(ContactRec);
+                    ContactListPage.SETTABLEVIEW(Contact);
                     ContactListPage.LOOKUPMODE(TRUE);
-                    ContactListPage.RUNMODAL;
+                    ContactListPage.RunModal();
                     
-                    ContactListPage.SetSelection(ContactRec);
-                    ContactRec.MARKEDONLY(TRUE);
-                    IF NOT ContactRec.FINDFIRST THEN BEGIN
+                    ContactListPage.SetSelection(Contact);
+                    Contact.MARKEDONLY(TRUE);
+                    if not Contact.FindFirst() then begin
                         ContactListPage.GETRECORD(ActiveRec);
-                        MESSAGE(NoMarkedRecords);
-                    END ELSE BEGIN
-                        REPEAT
-                            convertAndSetLinkToRegEntry(ContactRec);
-                        UNTIL ContactRec.NEXT = 0;
-                    END;
-                    if ErrorContacts <> '' then begin
-                        Error(ErrorContactMsg + '\' + ErrorContacts);
-                    end;
-                    
+                        Message(NoMarkedRecordsMsg);
+                    end else
+                        repeat
+                            convertAndSetLinkToRegEntry(Contact);
+                        until Contact.Next() = 0;
+                    if ErrorContacts <> '' then
+                        Error(ErrorContactMsg, ErrorContacts);
                 end;
 
             }
@@ -100,17 +97,16 @@ page 50006 "Registration Entry Subpage" {
     var
         ErrorContacts : Text;
 
-    local procedure convertAndSetLinkToRegEntry(VAR Contact : Record Contact)
+    local procedure convertAndSetLinkToRegEntry(var Contact : Record Contact)
     var
-        RegEntry : Record "Registration Entry";
+        RegistrationEntry : Record "Registration Entry";
     begin
-        RegEntry.INIT;
-        RegEntry."Direction Code" := rec."Direction Code";
-        RegEntry."Event Date" := rec."Event Date";
-        RegEntry."Participant Contact No." := Contact."No.";
-        if not RegEntry.INSERT(TRUE) then begin
+        RegistrationEntry.Init();
+        RegistrationEntry."Direction Code" := rec."Direction Code";
+        RegistrationEntry."Event Date" := rec."Event Date";
+        RegistrationEntry."Participant Contact No." := Contact."No.";
+        if not RegistrationEntry.Insert(true) then 
             ErrorContacts += StrSubstNo('Contact No. = %1, Name = %2', Contact."No.", Contact.Name) + '\';
-        end;
     end;
 
 }

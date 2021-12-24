@@ -1,4 +1,4 @@
-page 50005 LectureSetupPage
+page 50005 "Lecture Setup"
 {
     
     ApplicationArea = All;
