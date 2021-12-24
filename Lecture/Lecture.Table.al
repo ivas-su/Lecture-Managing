@@ -2,19 +2,16 @@ table 50002 Lecture {
 
     DataClassification = ToBeClassified;
     DataCaptionFields = "Code", Name, "Direction Name", "Prelector Name";
-    CaptionML = ENU='Lecture', 
-                RUS='Лекция';
+    Caption = 'Lecture';
 
     fields {
         field(1; "Direction Code"; Code[20]) {
-            CaptionML = ENU = 'Direction Code',
-                        RUS = 'Код направление';
+            Caption = 'Direction Code';
             DataClassification = ToBeClassified;
             TableRelation = Direction."Code";
         }
         field(2; "Code"; Code[20]) {
-            CaptionML = ENU = 'Code',
-                        RUS = 'Код лекции';
+            Caption = 'Code';
             Editable = false;
             DataClassification = ToBeClassified;
 
@@ -22,15 +19,14 @@ table 50002 Lecture {
             begin
                 if Rec."Code" <> xRec."Code" then begin
                     LectureSetup.Get();
-                    NoSeriesMgt.TestManual(LectureSetup."Lecture Nos.");
+                    NoSeriesManagement.TestManual(LectureSetup."Lecture Nos.");
                     Rec."Code" := '';
                 end;
             end;
 
         }
         field(3; "Direction Name"; Text[50]) {
-            CaptionML = ENU = 'Direction Name',
-                        RUS = 'Название направлений';
+            Caption = 'Direction Name';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -40,20 +36,17 @@ table 50002 Lecture {
             );
         }
         field(4; Name; Text[50]) {
-            CaptionML = ENU = 'Name',
-                        RUS = 'Название лекции';
+            Caption = 'Name';
             DataClassification = ToBeClassified;
         }
         field(5; "Prelector Code"; Code[20]) {
-            CaptionML = ENU = 'Prelector Code',
-                        RUS = 'Код лектора';
+            Caption = 'Prelector Code';
             TableRelation = Employee."No." where (
                 "Direction Code" = field("Direction Code")
             );
         }
         field(6; "Prelector Name"; Text[50]) {
-            CaptionML = ENU = 'Prelector Name',
-                        RUS = 'Имя лектора';
+            Caption = 'Prelector Name';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -67,7 +60,6 @@ table 50002 Lecture {
             AutoIncrement = true;
         }
         field(97; "No. Series"; Code[20]) {
-            Caption = 'No. Series';
             Editable = false;
             TableRelation = "No. Series";
         }
@@ -81,14 +73,14 @@ table 50002 Lecture {
 
     var
         LectureSetup : Record "Lecture Setup";
-        NoSeriesMgt : Codeunit NoSeriesManagement;
+        NoSeriesManagement : Codeunit NoSeriesManagement;
 
     trigger OnInsert()
     begin
         if Rec."Code" = '' then begin
             LectureSetup.Get();
             LectureSetup.TestField("Lecture Nos.");
-            NoSeriesMgt.InitSeries(
+            NoSeriesManagement.InitSeries(
                 LectureSetup."Lecture Nos.",
                 xRec."No. Series",
                 0D,

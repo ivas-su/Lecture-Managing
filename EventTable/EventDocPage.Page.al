@@ -2,21 +2,20 @@ page 50008 "Event Doc. Page" {
 
     PageType = Document;
     SourceTable = "Event";
-    CaptionML = ENU = 'Event Document Page',
-                RUS = 'Страница-документ мероприятия';
+    Caption = 'Event Document Page';
 
     layout {
         area(content) {
             group(General) {
                 field("Direction Code"; Rec."Direction Code")
                 {
-                    ToolTip = 'Specifies the value of the Direction Code field.';
+                    ToolTip = 'Specifies the value of the "Direction Code" field.';
                     ApplicationArea = All;
                     ShowMandatory = true;
                 }
                 field("Direction Name"; Rec."Direction Name")
                 {
-                    ToolTip = 'Specifies the value of the Direction Name field.';
+                    ToolTip = 'Specifies the value of the "Direction Name" field.';
                     ApplicationArea = All;
                     Lookup = false;
                     DrillDown = false;
@@ -24,19 +23,19 @@ page 50008 "Event Doc. Page" {
                 }
                 field("Event Date"; Rec."Event Date")
                 {
-                    ToolTip = 'Specifies the value of the Event Date field.';
+                    ToolTip = 'Specifies the value of the "Event Date" field.';
                     ApplicationArea = All;
                     ShowMandatory = true;
                 }
                 field("Lecture Code 1"; Rec."Lecture Code 1")
                 {
-                    ToolTip = 'Specifies the value of the Lecture Code 1 field.';
+                    ToolTip = 'Specifies the value of the "Lecture Code 1" field.';
                     ApplicationArea = All;
                     ShowMandatory = false;
                 }
                 field("Lecture Name 1"; Rec."Lecture Name 1")
                 {
-                    ToolTip = 'Specifies the value of the Lecture Name 1 field.';
+                    ToolTip = 'Specifies the value of the "Lecture Name 1" field.';
                     ApplicationArea = All;
                     Lookup = false;
                     DrillDown = false;
@@ -44,13 +43,13 @@ page 50008 "Event Doc. Page" {
                 }
                 field("Prelector Code 1"; Rec."Prelector Code 1")
                 {
-                    ToolTip = 'Specifies the value of the Prelector Code 1 field.';
+                    ToolTip = 'Specifies the value of the "Prelector Code 1" field.';
                     ApplicationArea = All;
                     ShowMandatory = false;
                 }
                 field("Prelector Name 1"; Rec."Prelector Name 1")
                 {
-                    ToolTip = 'Specifies the value of the Prelector Name 1 field.';
+                    ToolTip = 'Specifies the value of the "Prelector Name 1" field.';
                     ApplicationArea = All;
                     Lookup = false;
                     DrillDown = false;
@@ -58,13 +57,13 @@ page 50008 "Event Doc. Page" {
                 }
                 field("Lecture Code 2"; Rec."Lecture Code 2")
                 {
-                    ToolTip = 'Specifies the value of the Lecture Code 2 field.';
+                    ToolTip = 'Specifies the value of the "Lecture Code 2" field.';
                     ApplicationArea = All;
                     ShowMandatory = false;
                 }
                 field("Lecture Name 2"; Rec."Lecture Name 2")
                 {
-                    ToolTip = 'Specifies the value of the Lecture Name 2 field.';
+                    ToolTip = 'Specifies the value of the "Lecture Name 2" field.';
                     ApplicationArea = All;
                     Lookup = false;
                     DrillDown = false;
@@ -72,13 +71,13 @@ page 50008 "Event Doc. Page" {
                 }
                 field("Prelector Code 2"; Rec."Prelector Code 2")
                 {
-                    ToolTip = 'Specifies the value of the Prelector Code 2 field.';
+                    ToolTip = 'Specifies the value of the "Prelector Code 2" field.';
                     ApplicationArea = All;
                     ShowMandatory = false;
                 }
                 field("Prelector Name 2"; Rec."Prelector Name 2")
                 {
-                    ToolTip = 'Specifies the value of the Prelector Name 2 field.';
+                    ToolTip = 'Specifies the value of the "Prelector Name 2" field.';
                     ApplicationArea = All;
                     Lookup = false;
                     DrillDown = false;
@@ -86,16 +85,17 @@ page 50008 "Event Doc. Page" {
                 }
                 field("Number of people present"; Rec."Number of people present")
                 {
-                    ToolTip = 'Specifies the value of the Number of people present field.';
+                    ToolTip = 'Specifies the value of the "Number of people present" field.';
                     ApplicationArea = All;
                 }
                 field("Number of registered"; Rec."Number of registered")
                 {
-                    ToolTip = 'Specifies the value of the Number of registered field.';
+                    ToolTip = 'Specifies the value of the "Number of registered" field.';
                     ApplicationArea = All;
                 }
             }
             part(Subpage; "Registration Entry Subpage") {
+                Caption = 'Registration Entry Subpage';
                 SubPageLink = "Direction Code" = field("Direction Code"),
                               "Event Date" = field("Event Date");
                 ApplicationArea = All;
@@ -108,13 +108,13 @@ page 50008 "Event Doc. Page" {
         area(Processing) {
             action(Print) {
 
+                ToolTip = 'Prints currant event information';
                 ApplicationArea = All;
                 Image = Print;
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedOnly = true;
-                CaptionML = ENU = 'Print',
-                            RUS = 'Печать';
+                Caption = 'Print';
 
                 trigger OnAction()
                 var
@@ -133,19 +133,19 @@ page 50008 "Event Doc. Page" {
             }
             action("Send invitation") {
                 
+                ToolTip = 'Send invitation on emails';
                 ApplicationArea = All;
                 Image = SendMail;
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedOnly = true;
-                CaptionML = ENU = 'Send invitation',
-                            RUS = 'Выслать приглашения';
+                Caption = 'Send invitation';
 
                 trigger OnAction()
                 var
                     RegistrationEntry : Record "Registration Entry";
                     Mail : Codeunit "Reg. Entry Mailing";
-                    ContactsErr : TextConst ENU = 'There are no participants', RUS = 'Учатсники отсуцтвуют';
+                    ContactsErr : Label 'There are no participants';
                 begin
                     FilterParticipants(RegistrationEntry);
                     if not RegistrationEntry.FindFirst() then
@@ -157,10 +157,10 @@ page 50008 "Event Doc. Page" {
         }
     }
 
-    local procedure FilterParticipants(VAR RegEntry : Record "Registration Entry")
+    local procedure FilterParticipants(VAR RegistrationEntry : Record "Registration Entry")
     begin
-        RegEntry.SetRange("Direction Code", rec."Direction Code");
-        RegEntry.SetRange("Event Date", rec."Event Date");
+        RegistrationEntry.SetRange("Direction Code", rec."Direction Code");
+        RegistrationEntry.SetRange("Event Date", rec."Event Date");
     end;
 
 }

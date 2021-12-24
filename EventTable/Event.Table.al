@@ -2,23 +2,19 @@ table 50005 "Event" {
 
     DataClassification = ToBeClassified;
     DataCaptionFields = "Direction Name", "Event Date", "Lecture Name 1", "Prelector Name 1", "Lecture Name 2", "Prelector Name 2";
-    CaptionML = ENU = 'Event',
-                RUS = 'Мероприятие';
+    Caption = 'Event';
     
     fields {
         field(1; "Direction Code"; Code[20]) {
-            CaptionML = ENU = 'Direction Code',
-                        RUS = 'Код направления';
+            Caption = 'Direction Code';
             DataClassification = ToBeClassified;
             TableRelation = Direction."Code";
         }
         field(2; "Event Date"; Date) {
-            CaptionML = ENU = 'Event Date',
-                        RUS = 'Дата мероприятия';
+            Caption = 'Event Date';
         }
         field(3; "Direction Name"; Text[100]) {
-            CaptionML = ENU = 'Direction Name',
-                        RUS = 'Название мероприятия';
+            Caption = 'Direction Name';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -28,8 +24,7 @@ table 50005 "Event" {
             );
         }
         field(4; "Lecture Code 1"; Code[20]) {
-            CaptionML = ENU = 'Lecture Code 1',
-                        RUS = 'Код лекции 1';
+            Caption = 'Lecture Code 1';
             TableRelation = Lecture."Code" where (
                 "Direction Code" = field("Direction Code")
             );
@@ -41,8 +36,7 @@ table 50005 "Event" {
 
         }
         field(5; "Lecture Name 1"; Text[50]) {
-            CaptionML = ENU = 'Lecture Name 1',
-                        RUS = 'Название лекции 1';
+            Caption = 'Lecture Name 1';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -52,8 +46,7 @@ table 50005 "Event" {
             );
         }
         field(6; "Prelector Code 1"; Code[20]) {
-            CaptionML = ENU = 'Prelector Code 1',
-                        RUS = 'Код лектора 1';
+            Caption = 'Prelector Code 1';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -63,8 +56,7 @@ table 50005 "Event" {
             );
         }
         field(7; "Prelector Name 1"; Text[50]) {
-            CaptionML = ENU = 'Prelector Name 1',
-                        RUS = 'Имя лектора 1';
+            Caption = 'Prelector Name 1';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -74,8 +66,7 @@ table 50005 "Event" {
             );
         }
         field(8; "Lecture Code 2"; Code[20]) {
-            CaptionML = ENU = 'Lecture Code 2',
-                        RUS = 'Код лекции 2';
+            Caption = 'Lecture Code 2';
             TableRelation = Lecture."Code" where (
                 "Direction Code" = field("Direction Code")
             );
@@ -87,8 +78,7 @@ table 50005 "Event" {
 
         }
         field(9; "Lecture Name 2"; Text[50]) {
-            CaptionML = ENU = 'Lecture Name 2',
-                        RUS = 'Название лекции 2';
+            Caption = 'Lecture Name 2';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -98,8 +88,7 @@ table 50005 "Event" {
             );
         }
         field(10; "Prelector Code 2"; Code[20]) {
-            CaptionML = ENU = 'Prelector Code 2',
-                        RUS = 'Код лектора 2';
+            Caption = 'Prelector Code 2';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -109,8 +98,7 @@ table 50005 "Event" {
             );
         }
         field(11; "Prelector Name 2"; Text[50]) {
-            CaptionML = ENU = 'Prelector Name 2',
-                        RUS = 'Имя лектора 2';
+            Caption = 'Prelector Name 2';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -120,8 +108,7 @@ table 50005 "Event" {
             );
         }
         field(12; "Number of registered"; Integer) {
-            CaptionML = ENU = 'Number of registered',
-                        RUS = 'Количество зарегестрированых';
+            Caption = 'Number of registered';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = count (
@@ -132,8 +119,7 @@ table 50005 "Event" {
             );
         }
         field(13; "Number of people present"; Integer) {
-            CaptionML = ENU = 'Number of present',
-                        RUS = 'Количество присуцтвующих';
+            Caption = 'Number of present';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = count (
@@ -153,7 +139,7 @@ table 50005 "Event" {
 
     local procedure checkValidLectureCodes(lection1: Code[20]; lection2: Code[20])
     var
-        InsertErr : TextConst ENU = 'Cannot insert two simular lections', RUS = 'Нельхя добалять две одинаковые лекции';
+        InsertErr : Label 'Cannot insert two simular lections';
     begin
         if lection1 = lection2 then
             Error(InsertErr);

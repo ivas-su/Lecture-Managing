@@ -1,22 +1,18 @@
 table 50004 "Registration Entry" {
 
     DataClassification = ToBeClassified;
-    CaptionML = ENU = 'Registration Entry',
-                RUS = 'Регистрация';
+    Caption = 'Registration Entry';
 
     fields {
         field(1; "Direction Code"; Code[20]) {
-            CaptionML = ENU = 'Direction Code',
-                        RUS = 'Код направления';
+            Caption = 'Direction Code';
             TableRelation = Direction."Code";
         }
         field(2; "Event Date"; Date) {
-            CaptionML = ENU = 'Event Date',
-                        RUS = 'Дата мероприятия';
+            Caption = 'Event Date';
         }
         field(3; "Direction Name"; Text[50]) {
-            CaptionML = ENU = 'Direction Code',
-                        RUS = 'Название направление';
+            Caption = 'Direction Code';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -26,13 +22,11 @@ table 50004 "Registration Entry" {
             );
         }
         field(4; "Participant Contact No."; Code[20]) {
-            CaptionML = ENU = 'Participant Contact No.',
-                        RUS = 'Код участника';
+            Caption = 'Participant Contact No.';
             TableRelation = Contact."No." where(Type = const(Person));
         }
         field(5; "Participant Name"; Text[100]) {
-            CaptionML = ENU = 'Particioant Name',
-                        RUS = 'Имя участника';
+            Caption = 'Particioant Name';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -42,8 +36,7 @@ table 50004 "Registration Entry" {
             );
         }
         field(6; "Participant E-mail"; Text[80]) {
-            CaptionML = ENU = 'Participant E-mail',
-                        RUS = 'Элю почта участника';
+            Caption = 'Participant E-mail';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -53,8 +46,7 @@ table 50004 "Registration Entry" {
             );
         }
         field(7; "Participant Phone No."; Text[30]) {
-            CaptionML = ENU = 'Participant Phone No.',
-                        RUS = 'Телефон участника';
+            Caption = 'Participant Phone No.';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -64,12 +56,10 @@ table 50004 "Registration Entry" {
             );
         }
         field(8; Registered; Boolean) {
-            CaptionML = ENU = 'Registered',
-                        RUS = 'Регистрация';
+            Caption = 'Registered';
         }
         field(9; Present; Boolean) {
-            CaptionML = ENU = 'Present',
-                        RUS = 'Присуцтвие';
+            Caption = 'Present';
         }
     }
     

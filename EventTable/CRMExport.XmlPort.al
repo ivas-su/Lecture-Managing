@@ -7,7 +7,7 @@ xmlport 50000 CRMExport {
     schema {
         textelement(RootNodeName) {
             tableelement("Event"; "Event") {
-                fieldelement(DirectionCode; "Event"."Direction Code"){}
+                fieldelement(DirectionCode; "Event"."Direction Code") {}
                 fieldelement(EventDate; "Event"."Event Date") {}
                 tableelement(RegistrationEntry; "Registration Entry") {
                     LinkTable = "Event";

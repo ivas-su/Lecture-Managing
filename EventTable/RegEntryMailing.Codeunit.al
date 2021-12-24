@@ -1,53 +1,52 @@
 codeunit 50000 "Reg. Entry Mailing" {
 
     var
-        HeaderTemplateMsg : TextConst ENU = 'Dear, %1 %2<br><br>';
-        FooterTemplateMsg : TextConst ENU = 'You are invited to event:<br><br>Direction name: "%1"<br>Date: %2<br><br>Lecture name 1: "%3"<br>Prelector name 1: %4<br><br>Lecture name 2: "%5"<br>Prelector name 2: %6<br>',
-            RUS = 'Приглашаем вас на мероприятие:<br><br>Название направления: "%1"<br>Дата: %2<br><br>Название лекции 1: "%3"<br>Имя Prelector 1: %4<br><br> Название лекции 2: "%5"<br>Имя Prelector 2: %6<br>';
-        EmptyMailFieldErr : TextConst ENU = 'There are participants without E-mail. Continue?\',
-                                        RUS = 'Есть участники без электронной почты. Продолжить?\';
+        HeaderTemplateMsg : label 'Dear, %1 %2<br><br>', Comment = '%1 - Name, %2 - Surname';
+        FooterTemplateMsg : label 'You are invited to event:<br><br>Direction name: "%1"<br>Date: %2<br><br>Lecture name 1: "%3"<br>Prelector name 1: %4<br><br>Lecture name 2: "%5"<br>Prelector name 2: %6<br>',
+            Comment = '%1 - Direction Name, %2 - Event Date, %3 - Lecture Name 1, %4 - Prelector Name 1, %5 - Lecture Name 2, %6 - Prelector Name 2';
+        EmptyMailFieldErr : Label 'There are participants without E-mail. Continue?\';
         MsgHeader : Text;
         MsgFooter : Text;
         Messages : List of [Text];
         Emails : List of [Text];
         NoEmailParticipants : List of [Text];
 
-    procedure SendRequests(VAR RegistrationEntry : Record "Registration Entry")
+    procedure SendRequests(var RegistrationEntry : Record "Registration Entry")
     var
         Contact : Record Contact;
     begin
         setMsgTemplate(RegistrationEntry);
 
-        REPEAT
-            RegistrationEntry.CALCFIELDS("Participant E-mail");
-            IF checkEmailFieldNotEmpty(RegistrationEntry) THEN BEGIN
-                Contact.GET(RegistrationEntry."Participant Contact No.");
+        repeat
+            RegistrationEntry.CalcFields("Participant E-mail");
+            if checkEmailFieldNotEmpty(RegistrationEntry) then begin
+                Contact.Get(RegistrationEntry."Participant Contact No.");
                 Messages.Add(StrSubstNo(MsgHeader + MsgFooter, Contact."First Name", Contact.Surname));
                 Emails.Add(Contact."E-Mail");
-            END;
-        UNTIL RegistrationEntry.Next() = 0;
+            end;
+        until RegistrationEntry.Next() = 0;
 
-        IF NoEmailParticipants.Count() <> 0 THEN begin
-            IF CONFIRM(EmptyMailFieldErr + stringConcatention(NoEmailParticipants)) THEN
+        if NoEmailParticipants.Count() <> 0 then begin
+            if Confirm(EmptyMailFieldErr + listToString(NoEmailParticipants)) then
                 sendTemplateRequest();
         end else
             sendTemplateRequest();
 
     end;    
 
-    local procedure checkEmailFieldNotEmpty(RegEntry : Record "Registration Entry") : Boolean
+    local procedure checkEmailFieldNotEmpty(RegistrationEntry : Record "Registration Entry") : Boolean
     begin
-        IF RegEntry."Participant E-mail" = '' THEN BEGIN
-            RegEntry.CALCFIELDS("Participant Name");
+        if RegistrationEntry."Participant E-mail" = '' then begin
+            RegistrationEntry.CalcFields("Participant Name");
             NoEmailParticipants.Add(
-            RegEntry."Direction Code" + ', ' 
-            + FORMAT(RegEntry."Event Date") + ', ' 
-            + RegEntry."Participant Contact No." + ', '
-            + RegEntry."Participant Name" + '\'
+            RegistrationEntry."Direction Code" + ', ' 
+            + FORMAT(RegistrationEntry."Event Date") + ', ' 
+            + RegistrationEntry."Participant Contact No." + ', '
+            + RegistrationEntry."Participant Name" + '\'
             );
-            EXIT(FALSE);
-        END;
-        EXIT(TRUE);
+            exit(FALSE);
+        end;
+        exit(TRUE);
     end;
 
     local procedure sendTemplateRequest()
@@ -55,7 +54,7 @@ codeunit 50000 "Reg. Entry Mailing" {
         EmailMessage : Codeunit "Email Message";
         EmailMgt : Codeunit Email;
         idx : Integer;
-        SubjTxt : TextConst ENU = 'Event invitation', RUS = 'Приглашение на мероприятие';
+        SubjTxt : Label 'Event invitation';
     begin
         for idx := 1 to Messages.Count() do begin
             EmailMessage.Create(Emails.Get(idx), SubjTxt, Messages.Get(idx), true);
@@ -63,7 +62,7 @@ codeunit 50000 "Reg. Entry Mailing" {
         end;
     end;
 
-    local procedure setMsgTemplate(VAR RegistrationEntry : Record "Registration Entry")
+    local procedure setMsgTemplate(var RegistrationEntry : Record "Registration Entry")
     var
         EventRec : Record "Event";
     begin
@@ -82,7 +81,7 @@ codeunit 50000 "Reg. Entry Mailing" {
         );
     end;
 
-    local procedure stringConcatention(strings : list of [Text]) : Text
+    local procedure listToString(strings : list of [Text]) : Text
     var
         result : Text;
         idx : Integer;

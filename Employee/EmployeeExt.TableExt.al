@@ -2,15 +2,13 @@ tableextension 50001 EmployeeExt extends Employee {
     fields {
         field(50000; "Direction Code"; Code[20])
         {
-            CaptionML = ENU = 'Direction Code',
-                        RUS = 'Код направления';
+            Caption = 'Direction Code';
             DataClassification = ToBeClassified;
             TableRelation = Direction."Code";
         }
         field(50001; "Direction Name"; Text[50])
         {
-            CaptionML = ENU = 'Direction Name',
-                        RUS = 'Название направления';
+            Caption = 'Direction Name';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup (
@@ -22,8 +20,7 @@ tableextension 50001 EmployeeExt extends Employee {
         }
         field(50002; "Number of lectures"; Integer)
         {
-            CaptionML = ENU = 'Number of lectures',
-                        RUS = 'Количество лекций';
+            Caption = 'Number of lectures';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = count (

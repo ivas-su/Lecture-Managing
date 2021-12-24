@@ -1339,6 +1339,9 @@ End Function
         <Field Name="RegisteredButNotPresent">
           <DataField>RegisteredButNotPresent</DataField>
         </Field>
+        <Field Name="PrelectorCommentLbl">
+          <DataField>PrelectorCommentLbl</DataField>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>DataSource</DataSourceName>

@@ -1,7 +1,6 @@
 page 50000 "Direction List" {
     
-    CaptionML = ENU = 'List of directions',
-                RUS = 'Список направлений';
+    Caption = 'List of directions';
     PageType = List;
     SourceTable = Direction;
     CardPageId = "Direction Card";
@@ -13,16 +12,16 @@ page 50000 "Direction List" {
         area(content) {
             repeater(General) {
                 field("Code"; Rec."Code") {
-                    ToolTip = 'Specifies the value of the Code field.';
+                    ToolTip = 'Specifies the value of the "Code" field.';
                     ApplicationArea = All;
                 }
                 field(Name; Rec.Name) {
-                    ToolTip = 'Specifies the value of the Name field.';
+                    ToolTip = 'Specifies the value of the "Name" field.';
                     ApplicationArea = All;
                     ShowMandatory = true;
                 }
                 field("Responsible Person Code"; Rec."Responsible Person Code") {
-                    ToolTip = 'Specifies the value of the Responsible Person Code field.';
+                    ToolTip = 'Specifies the value of the "Responsible Person Code" field.';
                     ApplicationArea = All;
                     ShowMandatory = true;
                     Lookup = true;
@@ -30,7 +29,7 @@ page 50000 "Direction List" {
                     DrillDown = false;
                 }
                 field("Responsible Person Name"; Rec."Responsible Person Name") {
-                    ToolTip = 'Specifies the value of the Responsible Person Name field.';
+                    ToolTip = 'Specifies the value of the "Responsible Person Name" field.';
                     ApplicationArea = All;
                 }
             }
