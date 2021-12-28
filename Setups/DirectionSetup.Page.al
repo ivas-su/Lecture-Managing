@@ -1,15 +1,18 @@
 page 50004 "Direction Setup"
 {
-    
+
     Caption = 'Direction Setup Page';
-    PageType = List;
+    PageType = Card;
     SourceTable = "Direction Setup";
-    UsageCategory = Lists;
+    UsageCategory = Administration;
     ApplicationArea = All;
-    
-    layout {
-        area(content) {
-            group(General) {
+
+    layout
+    {
+        area(content)
+        {
+            group(General)
+            {
                 field("No."; Rec."No.")
                 {
                     ToolTip = 'Specifies the value of the No. field.';

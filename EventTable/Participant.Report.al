@@ -49,7 +49,7 @@ report 50000 Participant
     var
         RegisteredCounter: Integer;
         RegisteredButNotPresentCounter: Integer;
-        PrelectorCommentLbl: label 'Prelector Comment';
+        PrelectorCommentLbl: label 'Prelector Comment', Locked = false;
         ReportTitleLbl: Label 'Report header', Locked = false;
         VisitorsLbl: Label 'Visitors', Locked = false;
         RegisteredButNotPresentLbl: Label 'Registered, but not visited', Locked = false;

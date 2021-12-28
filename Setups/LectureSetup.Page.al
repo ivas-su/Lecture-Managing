@@ -1,26 +1,26 @@
 page 50005 "Lecture Setup"
 {
     
-    ApplicationArea = All;
-    Caption = 'LectureSetupPage';
-    PageType = List;
+    Caption = 'Lecture Setup Page';
+    PageType = Card;
     SourceTable = "Lecture Setup";
-    UsageCategory = Lists;
+    UsageCategory = Administration;
+    ApplicationArea = All;
     
     layout
     {
         area(content)
         {
-            repeater(General)
+            group(General)
             {
-                field("Lecture Nos."; Rec."Lecture Nos.")
-                {
-                    ToolTip = 'Specifies the value of the Lecture Nos. field.';
-                    ApplicationArea = All;
-                }
                 field("No."; Rec."No.")
                 {
                     ToolTip = 'Specifies the value of the No. field.';
+                    ApplicationArea = All;
+                }
+                field("Lecture Nos."; Rec."Lecture Nos.")
+                {
+                    ToolTip = 'Specifies the value of the Lecture Nos. field.';
                     ApplicationArea = All;
                 }
             }
