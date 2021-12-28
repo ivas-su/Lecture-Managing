@@ -1,12 +1,16 @@
-page 50006 "Registration Entry Subpage" {
-    
+page 50006 "Registration Entry Subpage"
+{
+
     PageType = ListPart;
     SourceTable = "Registration Entry";
     Caption = 'Registration Entry Subpage';
-    
-    layout {
-        area(content) {
-            repeater(General) {
+
+    layout
+    {
+        area(content)
+        {
+            repeater(General)
+            {
                 field("Direction Code"; Rec."Direction Code")
                 {
                     ToolTip = 'Specifies the value of the "Direction Code" field.';
@@ -56,38 +60,46 @@ page 50006 "Registration Entry Subpage" {
         }
     }
 
-    actions {
-        area(Processing) {
-            
-            action("Add some particiapnts") {
+    actions
+    {
+        area(Processing)
+        {
+
+            action("Add some particiapnts")
+            {
 
                 Caption = 'Add participants';
                 ApplicationArea = All;
                 ToolTip = 'Add several participants';
+                Image = Add;
 
                 trigger OnAction()
-                var 
-                    Contact : Record Contact;
-                    ActiveRec : Record Contact;
-                    ContactListPage : Page "Contact Person List";
-                    NoMarkedRecordsMsg : Label 'No marked records';
-                    ErrorContactMsg : Label 'These participants not added\%1', Comment = '%1 - list of not added participants';
+                var
+                    Contact: Record Contact;
+                    ActiveRec: Record Contact;
+                    SelectedRecord: Record Contact;
+                    ContactListPage: Page "Contact Person List";
+                    NoMarkedRecordsMsg: Label 'No marked records';
+                    ErrorContactMsg: Label 'These participants not added\%1', Comment = '%1 - list of not added participants';
                 begin
+                    Contact.Reset();
+                    
                     ContactListPage.SETTABLEVIEW(Contact);
                     ContactListPage.LOOKUPMODE(TRUE);
-                    ContactListPage.RunModal();
-                    
-                    ContactListPage.SetSelection(Contact);
-                    Contact.MARKEDONLY(TRUE);
-                    if not Contact.FindFirst() then begin
-                        ContactListPage.GETRECORD(ActiveRec);
-                        Message(NoMarkedRecordsMsg);
-                    end else
-                        repeat
-                            convertAndSetLinkToRegEntry(Contact);
-                        until Contact.Next() = 0;
-                    if ErrorContacts <> '' then
-                        Error(ErrorContactMsg, ErrorContacts);
+
+                    if ContactListPage.RunModal() = Action::LookupOK then begin
+                        SelectedRecord := Contact;
+                        ContactListPage.SetSelection(SelectedRecord);
+                        SelectedRecord.MARKEDONLY(TRUE);
+                        if not SelectedRecord.FindFirst() then begin
+                            ContactListPage.GETRECORD(ActiveRec);
+                            Message(NoMarkedRecordsMsg);
+                        end else
+                            convertAndSetLinkToRegEntry(SelectedRecord);
+                        if ErrorContacts <> '' then
+                            Message(ErrorContactMsg, ErrorContacts);
+                            ErrorContacts := '';
+                    end;
                 end;
 
             }
@@ -95,20 +107,23 @@ page 50006 "Registration Entry Subpage" {
     }
 
     var
-        ErrorContacts : Text;
+        ErrorContacts: Text;
 
-    local procedure convertAndSetLinkToRegEntry(var Contact : Record Contact)
+    local procedure convertAndSetLinkToRegEntry(var Contact: Record Contact)
     var
-        RegistrationEntry : Record "Registration Entry";
-        TemplateErr : Label '%1 = %2, %3 = %4', 
+        RegistrationEntry: Record "Registration Entry";
+        typeHelper : Codeunit "Type Helper";
+        TemplateErr: Label '%1 = %2, %3 = %4',
             Comment = '%1 - FCaption, %2 - No., %3 - FCaption, %4 - Name';
     begin
-        RegistrationEntry.Init();
-        RegistrationEntry."Direction Code" := rec."Direction Code";
-        RegistrationEntry."Event Date" := rec."Event Date";
-        RegistrationEntry."Participant Contact No." := Contact."No.";
-        if not RegistrationEntry.Insert(true) then 
-            ErrorContacts += StrSubstNo(TemplateErr, Contact.FieldCaption("Company No."), Contact."No.", Contact.FieldCaption(Name), Contact.Name) + '\';
+        repeat
+            RegistrationEntry.Init();
+            RegistrationEntry."Direction Code" := rec."Direction Code";
+            RegistrationEntry."Event Date" := rec."Event Date";
+            RegistrationEntry."Participant Contact No." := Contact."No.";
+            if not RegistrationEntry.Insert(true) then
+                ErrorContacts += StrSubstNo(TemplateErr, Contact.FieldCaption("Company No."), Contact."No.", Contact.FieldCaption(Name), Contact.Name) + typeHelper.CRLFSeparator();
+        until Contact.Next() = 0;
     end;
 
 }
